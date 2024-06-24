@@ -1,0 +1,421 @@
+/* Impor Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  scroll-behavior: smooth; /* Animasi scroll halus */
+
+  /* Variabel root untuk warna */
+  --color-background: #e7f0dc; /* Warna latar belakang */
+  --color-primary: #597445; /* Warna utama */
+  --color-secondary: #658147; /* Warna sekunder */
+  --color-accent: #729762; /* Warna aksen */
+  --color-text: #151515; /* Warna teks utama */
+  --color-text-light: #f9f5f6; /* Warna teks terang */
+  --color-black: #151515; /* Warna hitam */
+  --color-white: #f9f5f6; /* Warna putih */
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: "Montserrat", sans-serif; /* Jenis font */
+  background-color: var(--color-background); /* Warna latar belakang body */
+  color: var(--color-text); /* Warna teks utama */
+  padding-top: 10px; /* Padding di bagian atas */
+}
+
+/* Header styles */
+header {
+  position: fixed; /* Header tetap di bagian atas */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primary); /* Warna latar belakang header */
+  padding: 15px 0; /* Padding atas dan bawah */
+  z-index: 1000; /* Z-index untuk menempatkan di atas konten lain */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow untuk efek bayangan */
+  transition: background-color 0.3s ease; /* Transisi warna latar belakang */
+}
+
+/* Container untuk menyesuaikan lebar konten */
+header .container {
+  display: flex;
+  justify-content: space-between; /* Penyebaran ruang antara elemen */
+  align-items: center; /* Pusatkan elemen vertikal */
+  max-width: 1200px; /* Lebar maksimum kontainer header */
+  margin: 0 auto; /* Margin kiri-kanan otomatis */
+  padding: 0 20px; /* Padding kiri-kanan */
+}
+
+/* Judul header di sebelah kiri */
+header h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  text-transform: uppercase; /* Huruf besar */
+  color: var(--color-white); /* Warna teks putih */
+}
+
+/* Navigasi di sebelah kanan */
+nav {
+  margin-left: auto; /* Dorong navigasi ke ujung kanan */
+}
+
+nav ul {
+  list-style-type: none; /* Hapus tanda daftar */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* Ruang antar item */
+}
+
+nav ul li a {
+  color: var(--color-white); /* Warna teks */
+  text-decoration: none; /* Tanpa garis bawah */
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease; /* Transisi warna dan transformasi */
+}
+
+/* Hover untuk tautan navigasi */
+nav ul li a:hover {
+  color: var(--color-secondary); /* Warna teks saat di-hover */
+  transform: scale(1.05); /* Memperbesar sedikit saat di-hover */
+}
+
+/* Section styles */
+section {
+  padding: 20px;
+  background-color: var(--color-white); /* Warna latar belakang section */
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  text-align: center;
+  border-radius: 5px;
+}
+
+section h2 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Gaya untuk kontainer utama */
+.container {
+  width: 100%; /* Lebar kontainer */
+  max-width: 1200px; /* Lebar maksimum untuk layar besar */
+  margin: 0 auto; /* Posisi tengah */
+}
+
+/* Style untuk halaman utama (home) */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh; /* Mengurangi ketinggian untuk menyisakan ruang antara header dan konten */
+  margin-top: 20px; /* Mengurangi margin atas agar lebih dekat dengan header */
+  position: relative;
+  z-index: 0;
+}
+
+/* Kontainer untuk gambar dan teks overlay */
+.image-overlay {
+  position: relative;
+  width: 90%; /* Lebar 90% dari parent */
+  max-width: 950px; /* Maksimum lebar foto */
+  height: 75vh; /* Tinggi relatif untuk konten */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px; /* Sudut lengkung */
+  z-index: 1;
+}
+
+/* Gambar utama */
+.image-overlay img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Sudut lengkung */
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-white);
+  text-align: center;
+  width: 80%;
+}
+
+.overlay-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 1.2em;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding: 0 20px;
+}
+
+/* Gaya untuk bagian Products */
+.products {
+  position: relative; /* Pastikan posisi relatif untuk kontainer produk */
+  z-index: 0; /* Tetapkan z-index lebih rendah daripada foto untuk berada di bawahnya */
+  padding: 1em 0;
+  text-align: center;
+  background-color: var(--color-background);
+  padding-top: 80px; /* Padding top untuk mengimbangi header tetap */
+  margin-top: 60px; /* Menyesuaikan margin atas agar tidak menutupi foto */
+  z-index: 1;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+}
+
+.product-item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  width: calc(30% - 20px); /* Ukuran produk disesuaikan dengan lebar layar */
+  max-width: 300px; /* Lebar maksimum item produk */
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative; /* Pastikan posisi relatif untuk z-index yang lebih rendah */
+  z-index: 0; /* Tetapkan z-index lebih rendah daripada foto */
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-item h3 {
+  margin: 10px 0;
+}
+
+.product-item p {
+  font-weight: bold;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.product-item button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 5px;
+}
+
+.product-item button:hover {
+  background-color: var(--color-secondary);
+  transform: scale(1.05);
+}
+
+/* Judul "Produk Kami" di dalam kontainer produk */
+.products h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+/* Media query untuk desain responsif */
+@media (max-width: 768px) {
+  .product-item {
+    width: calc(50% - 20px);
+    max-width: 400px; /* Lebar maksimum item produk di layar kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-item {
+    width: calc(100% - 20px);
+    max-width: 100%; /* Item produk mengisi lebar layar pada ukuran paling kecil */
+  }
+}
+
+/* Gaya untuk detail produk */
+.product-details {
+  display: none;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.product-details p {
+  margin-bottom: 0.5em;
+  color: var(--color-text-light);
+}
+
+.product-details ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.product-details ul li {
+  margin-bottom: 0.5em;
+  color: var(--color-text-light);
+}
+
+/* Gaya untuk bagian Contact */
+.contact {
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  padding: 2em 0;
+  text-align: center;
+}
+
+.contact ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact ul li {
+  margin-bottom: 0.5em;
+}
+/* Gaya untuk bagian Tentang Kami */
+.about {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  padding: 4em 0; /* Meningkatkan padding atas dan bawah */
+  text-align: center;
+}
+
+.about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px; /* Batasi lebar konten agar tidak terlalu lebar pada layar besar */
+  margin: 0 auto; /* Posisi tengah konten */
+}
+
+.about h2 {
+  font-size: 3em; /* Memperbesar ukuran judul */
+  margin-bottom: 30px; /* Meningkatkan jarak bawah judul */
+  color: var(--color-primary);
+}
+
+.about p {
+  font-size: 1.4em; /* Memperbesar ukuran teks */
+  line-height: 1.8; /* Menambah spasi antarbaris */
+  margin-bottom: 30px; /* Meningkatkan jarak bawah teks */
+}
+
+.about .about-details {
+  display: flex;
+  flex-wrap: wrap; /* Memastikan detail dapat wrapping */
+  justify-content: space-around;
+  margin-top: 30px; /* Meningkatkan jarak atas detail */
+}
+
+.about .about-details .detail {
+  width: 30%;
+  margin-bottom: 20px; /* Meningkatkan jarak bawah detail */
+}
+
+.about .about-details h3 {
+  font-size: 1.8em; /* Memperbesar ukuran judul detail */
+  margin-bottom: 15px; /* Meningkatkan jarak bawah judul detail */
+  color: var(--color-secondary);
+}
+
+.about .about-details p {
+  font-size: 1.2em; /* Memperbesar ukuran teks detail */
+  line-height: 1.6; /* Menambah spasi antarbaris pada teks detail */
+}
+
+/* Gaya untuk footer */
+.footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1em 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Media query untuk desain responsif */
+@media (max-width: 768px) {
+  .product-item {
+    width: calc(50% - 2em);
+  }
+
+  .image-overlay img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-item {
+    width: calc(100% - 2em);
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+}
+
+/* Gaya khusus untuk detail produk di halaman home */
+.home .product-details {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  margin-top: 0.5em;
+}
+
+.home .product-details p,
+.home .product-details ul {
+  color: var(--color-text-light);
+}
+
+.home .product-details ul li {
+  color: var(--color-text-light);
+}
